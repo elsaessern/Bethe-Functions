@@ -1,0 +1,4 @@
+_XSERVTransmkdir: Owner of /tmp/.X11-unix should be set to root
+_XSERVTransmkdir: Mode of /tmp/.X11-unix should be set to 1777
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.

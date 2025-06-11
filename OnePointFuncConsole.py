@@ -216,12 +216,12 @@ plotFileName = plotFileName + ".png"
 plt.colorbar(surf, shrink=0.5, aspect=8)
 
 
-plt.savefig(plotFileName)
+plt.savefig("Plots and output files/"+plotFileName)
 # plt.show()
 
 ax.view_init(90,0)
 ProjectedPlotFileName = "2D " + plotFileName
-plt.savefig(ProjectedPlotFileName)
+plt.savefig("Plots and output files/"+ProjectedPlotFileName)
 
 # COMPUTATION END 
 print("This computation took {} seconds.".format(time.time() - startTime))

@@ -1,0 +1,2 @@
+t=0 probabilities:  [4.82445451e-32 1.00000000e+00 1.00000000e+00 3.83548948e-31]
+This computation took 28.732608795166016 seconds.

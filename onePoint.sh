@@ -30,16 +30,20 @@
 
 #job resource specifications
 #SBATCH -p share
-#SBATCH --mem=5G
-#SBATCH -c 4
-#SBATCH --time=24:00:00
+#SBATCH --mem=50G
+#SBATCH -c 18
+#SBATCH --time=48:00:00
 
 # files to write to
-#SBATCH -o "plotStdOut (job %j).txt"
-#SBATCH -e "plotStdError (job %j).txt"
+#SBATCH -o "Plots and output files/plotStdOut (job %j).txt"
+#SBATCH -e "Plots and output files/plotStdError (job %j).txt"
 
 
-
+if [[ $# -lt $((3 + $1)) ]]; then
+	echo "ERROR: Not enough arguments supplied!"
+	echo "Usage: onePoint.sh [N] [L] [Delta] [N init conds]"
+	exit -1
+fi
 
 # load python yay 
 module load python
@@ -62,7 +66,7 @@ if [ "$(pip3 list | grep scipy)" = "" ]; then
 fi 
 
 # run the thing 
-python3 OnePointFuncConsole.py 
+python3 OnePointFuncConsole.py $@
 
 # delete virtual display buffer 
 kill $XvfbPID

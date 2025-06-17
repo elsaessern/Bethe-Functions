@@ -1,0 +1,22 @@
+nvcc -DNDEBUG -g -O2 $(python3 -m pybind11 --includes) -c spinChain.cpp -o spinChain.o -Xcompiler "-std=c++17 -fno-strict-overflow -Wsign-compare -Wall -fPIC -fvisibility=hidden -g0"
+nvcc -DNDEBUG -g -O2 $(python3 -m pybind11 --includes) -c goldCode.cpp -o goldCode.o -Xcompiler "-std=c++17 -fno-strict-overflow -Wsign-compare -Wall -fPIC -fvisibility=hidden -g0"
+nvcc -DNDEBUG -g -O2 $(python3 -m pybind11 --includes) -c gpuCode.cpp -o gpuCode.o -Xcompiler "-std=c++17 -fno-strict-overflow -Wsign-compare -Wall -fPIC -fvisibility=hidden -g0"
+
+
+
+
+# c++ -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC $(python3 -m pybind11 --includes) -c goldCode.cpp -o goldCode.o -std=c++17 -fvisibility=hidden -g0
+# c++ -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC $(python3 -m pybind11 --includes) -c spinChain.cpp -o spinChain.o -std=c++17 -fvisibility=hidden -g0
+# c++ -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -shared -Wl,-O1 -Wl,-Bsymbolic-functions goldCode.o spinChain.o -L/usr/lib/x86_64-linux-gnu -o libspinChain.cpython-312-x86_64-linux-gnu.so
+
+
+# c++ -O3 -Wall -shared -std=c++11 -fPIC $(python3 -m pybind11 --includes) spinChain.cpp -o spinChain.o -lpython3.12
+# c++ -O3 -Wall -shared -std=c++11 -fPIC $(python3 -m pybind11 --includes) goldCode.cpp -o goldCode.o -lpython3.12
+# c++ -O3 -Wall -shared -std=c++11 -fPIC *.o -o libspinChain$(python3-config --extension-suffix) -lpython3.12
+
+# x86_64-linux-gnu-g++ -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -DVERSION_INFO=0.0.1 -I/tmp/pip-build-env-xq3brp3a/overlay/lib/python3.12/site-packages/pybind11/include -I/home/ecorwin/Documents/Code/spinChain/sp-env/include -I/usr/include/python3.12 -c goldCode.cpp -o /tmp/tmpdn3xuv12.build-temp/goldCode.o -std=c++17 -fvisibility=hidden -g0
+
+# x86_64-linux-gnu-g++ -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -DVERSION_INFO=0.0.1 -I/tmp/pip-build-env-xq3brp3a/overlay/lib/python3.12/site-packages/pybind11/include -I/home/ecorwin/Documents/Code/spinChain/sp-env/include -I/usr/include/python3.12 -c spinChain.cpp -o /tmp/tmpdn3xuv12.build-temp/spinChain.o -std=c++17 -fvisibility=hidden -g0
+
+# x86_64-linux-gnu-g++ -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -shared -Wl,-O1 -Wl,-Bsymbolic-functions /tmp/tmpdn3xuv12.build-temp/goldCode.o /tmp/tmpdn3xuv12.build-temp/spinChain.o -L/usr/lib/x86_64-linux-gnu -o /tmp/tmpf9f0o__y.build-lib/libspinChain.cpython-312-x86_64-linux-gnu.so
+

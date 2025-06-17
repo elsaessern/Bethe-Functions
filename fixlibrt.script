@@ -1,5 +1,0 @@
- sed -i 's#/usr/lib/x86_64-linux-gnu/librt.a#/home/ecorwin/Documents/Code/spinChain/temp/librt.a#' CMakeCache.txt 
- sed -i 's#/usr/lib/x86_64-linux-gnu/librt.a#/home/ecorwin/Documents/Code/spinChain/temp/librt.a#' CMakeFiles/libspinChain.dir/link.txt
- sed -i 's#/usr/lib/x86_64-linux-gnu/librt.a#/home/ecorwin/Documents/Code/spinChain/temp/librt.a#' CMakeFiles/libspinChain.dir/dlink.txt
- sed -i 's#/usr/lib/x86_64-linux-gnu/librt.a#/home/ecorwin/Documents/Code/spinChain/temp/librt.a#' CMakeFiles/libspinChain.dir/build.make
-
